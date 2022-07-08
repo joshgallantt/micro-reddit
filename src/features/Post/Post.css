@@ -1,0 +1,46 @@
+.post {
+  border: 1px solid black;
+  display: flex;
+  padding: 15px;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.post--container {
+  display: grid;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+  padding: 20px;
+  border: 1px solid black;
+}
+
+.post--container--votebar {
+  display: flex;
+  flex-direction: column;
+}
+
+.post--container--content {
+  width: 100%;
+  margin: auto;
+  border: 1px solid black;
+}
+.post--container--content-postinfo {
+  gap: 20px;
+  padding: 10px;
+}
+
+.post--container--content-bottominfo {
+  display: flex;
+  gap: 30px;
+}
+
+.preview {
+  max-height: 500px;
+  max-height: 500px;
+}
+
+video {
+  cursor: auto;
+}
