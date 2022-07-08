@@ -4,7 +4,7 @@
   align-items: center;
   padding: 0 12px;
   gap: 20px;
-  height: 4em;
+  height: 5em;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
   background-color: white;
 }
@@ -20,6 +20,10 @@
   padding-left: 10px;
 }
 
+.header--title {
+  display: none;
+}
+
 .header--title--micro {
   color: blue;
 }
@@ -33,8 +37,13 @@
 
 .header--searchbox input {
   text-indent: 30px;
-  height: 25px;
+  height: 40px;
   width: 100%;
+}
+
+input,
+input::placeholder {
+  font-size: 24px;
 }
 
 .header--search--icon {
@@ -42,9 +51,15 @@
   height: 15px;
   position: absolute;
   left: 10px;
-  top: 8px;
+  top: 15px;
 }
 
 .header--dots {
-  width: 100px;
+  width: 10vw;
+}
+
+@media only screen and (min-width: 500px) {
+  .header--title {
+    display: block;
+  }
 }

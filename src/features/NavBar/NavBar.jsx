@@ -13,7 +13,7 @@ function NavBar() {
         </h2>
       </div>
       <div className="header--searchbox">
-        <input type="text" placeholder="search subreddits"></input>
+        <input type="text" placeholder="search"></input>
         <img
           className="header--search--icon"
           src={search}
