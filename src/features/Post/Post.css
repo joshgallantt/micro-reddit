@@ -1,5 +1,4 @@
 .post {
-  border: 1px solid black;
   display: flex;
   cursor: pointer;
   justify-content: center;
@@ -13,7 +12,7 @@
   align-items: center;
   background-color: whitesmoke;
   padding: 20px;
-  border-radius: 9px;
+  border-radius: 7px;
   margin: 10px;
   max-width: 1200px;
 }
@@ -31,7 +30,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  margin-right: 30px;
+  margin-right: 15px;
 }
 
 .post--container--votebar svg {
@@ -39,7 +38,7 @@
 }
 
 .score {
-  margin: 20px 0;
+  margin: 40px 0;
   color: blue;
 }
 
@@ -61,8 +60,6 @@
   width: 100%;
   margin: auto;
 }
-.post--container--content-postinfo {
-}
 
 .post--container--content-bottominfo {
   display: flex;
@@ -75,4 +72,7 @@
 
 video {
   cursor: auto;
+}
+
+@media screen {
 }
