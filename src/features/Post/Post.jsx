@@ -6,7 +6,7 @@ export default function Post() {
   console.log(data);
 
   const preview = () => {
-    if (data.data.children[10].data.secure_media !== null) {
+    if (data.data.children[0].data.secure_media !== null) {
       return (
         <video controls className="preview">
           <source
