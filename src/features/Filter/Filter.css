@@ -1,0 +1,25 @@
+.filters {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  max-width: 800px;
+  margin: auto;
+}
+
+.filters--entry {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.filters--entry:hover svg path,
+.filters--entry:hover {
+  fill: blue;
+  color: blue;
+  cursor: pointer;
+}
+
+.filters--entry svg {
+  width: 20px;
+}
