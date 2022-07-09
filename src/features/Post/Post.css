@@ -11,7 +11,7 @@
   justify-content: center;
   align-items: center;
   background-color: whitesmoke;
-  padding: 20px;
+  padding: 10px;
   border-radius: 7px;
   margin: 10px;
   max-width: 1200px;
@@ -30,11 +30,12 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  margin-right: 15px;
+  margin-right: 5px;
 }
 
 .post--container--votebar svg {
-  width: 30px;
+  width: 22px;
+  fill: #333;
 }
 
 .score {
@@ -59,6 +60,7 @@
 .post--container--content {
   width: 100%;
   margin: auto;
+  padding-right: 3vw;
 }
 
 .post--container--content-bottominfo {
@@ -66,8 +68,26 @@
   gap: 20px;
 }
 
+.comment {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.comment--count {
+  font-weight: bold;
+  color: blue;
+}
+
+.comment--icon {
+  width: 20px;
+}
+
 .preview {
   width: 100%;
+  max-height: 650px;
 }
 
 video {
