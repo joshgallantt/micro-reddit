@@ -2,7 +2,6 @@
   display: flex;
   cursor: pointer;
   justify-content: center;
-  max-width: 100vw;
 }
 
 .post-card {
@@ -11,9 +10,9 @@
   justify-content: center;
   align-items: center;
   background-color: whitesmoke;
-  padding: 10px;
   border-radius: 7px;
   margin: 10px;
+  width: 100%;
   max-width: 1200px;
 }
 
@@ -22,50 +21,55 @@
   gap: 10px;
   justify-content: center;
   align-items: center;
-  padding: 5px;
 }
 
 .post--container--votebar {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  margin-right: 5px;
 }
 
 .post--container--votebar svg {
-  width: 22px;
+  width: 20px;
   fill: #333;
 }
 
 .score {
-  margin: 40px 0;
+  font-size: 18px;
   color: blue;
 }
 
 .up {
-  width: 70px;
+  width: 30px;
 }
-.up:hover {
+
+.up:hover,
+.up:hover svg {
   fill: green;
 }
 
 .down {
-  width: 70px;
+  width: 40px;
 }
-.down:hover {
+.down:hover,
+.down:hover svg {
   fill: orange;
 }
 
+.mobile-score {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+}
 .post--container--content {
   width: 100%;
   margin: auto;
-  padding-right: 3vw;
 }
 
 .post--container--content-bottominfo {
   display: flex;
-  gap: 20px;
+  gap: 40px;
 }
 
 .comment {
@@ -92,7 +96,18 @@
 
 video {
   cursor: auto;
+  width: 100%;
 }
 
-@media screen {
+@media only screen and (min-width: 600px) {
+  .post--container--votebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .mobile-score {
+    display: none;
+    flex-direction: row;
+  }
 }
