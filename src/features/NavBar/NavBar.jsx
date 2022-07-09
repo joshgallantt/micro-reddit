@@ -20,7 +20,9 @@ function NavBar() {
           alt="search icon"
         ></img>
       </div>
-      <div className="header--dots">...</div>
+      <div className="header--dots">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
+      </div>
     </header>
   );
 }

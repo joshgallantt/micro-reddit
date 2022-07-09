@@ -5,6 +5,7 @@
   max-width: 800px;
   margin: auto;
   font-size: 20px;
+  max-width: 100vw;
 }
 
 .filters--entry {
@@ -14,14 +15,14 @@
   gap: 10px;
 }
 
-.filters--entry:hover svg path,
+.filters--entry:hover svg,
 .filters--entry:hover {
   fill: blue;
   color: blue;
   cursor: pointer;
 }
 
-.blue svg path,
+.blue svg,
 .blue {
   fill: blue;
   color: blue;
