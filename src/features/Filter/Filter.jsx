@@ -9,9 +9,10 @@ function Filter() {
 
   return (
     <div className="filters">
-      <div>{filter}</div>
       <div
-        className="filters--entry {"
+        className={
+          filter === "hot" ? "filters--entry blue" : "filters--entry black"
+        }
         onClick={() => dispatch(changeFilter("hot"))}
       >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -20,7 +21,9 @@ function Filter() {
         <h4>Hot</h4>
       </div>
       <div
-        className="filters--entry"
+        className={
+          filter === "new" ? "filters--entry blue" : "filters--entry black"
+        }
         onClick={() => dispatch(changeFilter("new"))}
       >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -29,7 +32,9 @@ function Filter() {
         <h4>New</h4>
       </div>
       <div
-        className="filters--entry"
+        className={
+          filter === "rising" ? "filters--entry blue" : "filters--entry black"
+        }
         onClick={() => dispatch(changeFilter("rising"))}
       >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
@@ -38,7 +43,9 @@ function Filter() {
         <h4>Rising</h4>
       </div>
       <div
-        className="filters--entry"
+        className={
+          filter === "top" ? "filters--entry blue" : "filters--entry black"
+        }
         onClick={() => dispatch(changeFilter("top"))}
       >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
