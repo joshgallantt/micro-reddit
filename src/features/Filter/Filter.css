@@ -21,6 +21,13 @@
   cursor: pointer;
 }
 
+.blue svg path,
+.blue {
+  fill: blue;
+  color: blue;
+  cursor: pointer;
+}
+
 .filters--entry svg {
   width: 20px;
 }
