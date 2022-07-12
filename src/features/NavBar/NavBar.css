@@ -28,30 +28,60 @@
   color: blue;
 }
 
-.header--searchbox {
-  display: inline-block;
+.search {
   position: relative;
+  width: 100%;
   max-width: 630px;
+}
+.header--searchbox {
   width: 100%;
 }
 
 .header--searchbox input {
+  border: 1px solid black;
   text-indent: 30px;
   height: 40px;
   width: 100%;
+  padding: 0;
+}
+
+.search--results {
+  border: 1px solid black;
+  position: absolute;
+  width: 100%;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+.search--result ul {
+  max-height: 300px;
+}
+
+.search--results li {
+  border: 1px solid #ddd; /* Add a border to all links */
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6; /* Grey background color */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove default text underline */
+  font-size: 18px; /* Increase the font-size */
+  color: black; /* Add a black text color */
+}
+
+.search--results li:hover {
+  color: blue; /* Add a black text color */
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }
 
 input,
 input::placeholder {
   font-size: 24px;
-}
-
-.header--search--icon {
-  display: inline-block;
-  height: 15px;
-  position: absolute;
-  left: 10px;
-  top: 15px;
 }
 
 .header--dots {
