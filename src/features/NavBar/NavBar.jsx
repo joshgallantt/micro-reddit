@@ -2,6 +2,7 @@ import React from "react";
 import "./NavBar.css";
 import logo from "./logo.png";
 import search from "./search.png";
+import Search from "../Search/Search";
 
 function NavBar() {
   return (
@@ -12,14 +13,7 @@ function NavBar() {
           <span className="header--title--micro">micro</span>Reddit
         </h2>
       </div>
-      <div className="header--searchbox">
-        <input type="text" placeholder="search"></input>
-        <img
-          className="header--search--icon"
-          src={search}
-          alt="search icon"
-        ></img>
-      </div>
+      <Search />
       <div className="header--dots">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
       </div>
