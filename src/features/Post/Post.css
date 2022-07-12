@@ -1,113 +1,78 @@
 .post {
   display: flex;
-  cursor: pointer;
-  justify-content: center;
-}
-
-.post-card {
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: whitesmoke;
-  border-radius: 7px;
-  margin: 10px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 600px;
+  background-color: white;
+  margin-top: 20px;
+  border-radius: 9px;
 }
 
-.post--container {
+.post--title {
+  padding: 0 20px;
+}
+
+.post--content * {
+  max-width: 100%;
+  max-height: 600px;
+}
+
+.post--content p {
+  padding: 20px;
+  word-wrap: break-word;
+  text-align: left;
+}
+
+.post--content--readmore {
+  color: blue;
+  text-align: right;
+}
+
+.post--info {
   display: flex;
-  gap: 10px;
+  max-width: 100%;
+  padding: 10px;
+  justify-content: space-evenly;
+}
+
+.post--info > * {
+  width: 100%;
+}
+
+.post--info svg {
+  min-width: 25px;
+}
+
+.post--info--score {
+  display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.post--container--votebar {
-  display: none;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.post--container--votebar svg {
-  width: 20px;
-  fill: #333;
-}
-
-.score {
-  font-size: 18px;
+  gap: 10px;
   color: blue;
 }
 
-.up {
-  width: 30px;
-}
-
-.up:hover,
-.up:hover svg {
+.post--info--score--up:hover {
   fill: green;
 }
 
-.down {
-  width: 40px;
-}
-.down:hover,
-.down:hover svg {
-  fill: orange;
-}
-
-.mobile-score {
+.post--info--comment {
   display: flex;
-  flex-direction: row;
-  border: 1px solid black;
-}
-.post--container--content {
-  width: 100%;
-  margin: auto;
-}
-
-.post--container--content-bottominfo {
-  display: flex;
-  gap: 40px;
-}
-
-.comment {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  align-items: center;
   justify-content: center;
-}
-
-.comment--count {
-  font-weight: bold;
+  align-items: center;
   color: blue;
+  gap: 5px;
 }
 
-.comment--icon {
-  width: 20px;
-}
-
-.preview {
+.post--info--author {
   width: 100%;
-  max-height: 650px;
+  text-align: center;
 }
 
-video {
-  cursor: auto;
-  width: 100%;
+.post--info--author p {
+  font-size: 12px;
 }
 
-@media only screen and (min-width: 600px) {
-  .post--container--votebar {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-  }
-  .mobile-score {
-    display: none;
-    flex-direction: row;
-  }
+.post--info-author--prop {
+  font-size: medium;
+  color: blue;
 }

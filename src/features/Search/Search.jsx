@@ -2,6 +2,8 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchSubreddits, setSearch, setFilter } from "./searchSlice";
+import "./Search.css";
+import { Link } from "react-router-dom";
 
 export default function Search() {
   const dispatch = useDispatch();
@@ -14,12 +16,16 @@ export default function Search() {
   const onFocus = () => {
     setFocused(true);
   };
-  const onBlur = () => setFocused(false);
+  const onBlur = () => {
+    setFocused(false);
+  };
 
+  // get list of subreddits
   useEffect(() => {
     dispatch(fetchSubreddits());
   }, [dispatch]);
 
+  //after getting list of subreddits, get a filtered list and alter it when typing
   useEffect(() => {
     if (data !== undefined) {
       dispatch(
@@ -28,7 +34,7 @@ export default function Search() {
         )
       );
     }
-  }, [searchParam]);
+  }, [data, searchParam]);
 
   return (
     <div className="search">
@@ -38,8 +44,10 @@ export default function Search() {
           placeholder="search"
           onChange={(e) => dispatch(setSearch(e.target.value.toLowerCase()))}
           value={searchParam}
-          onFocus={onFocus}
-          onBlur={onBlur}
+          onClick={onFocus}
+          onBlur={() => {
+            setTimeout(onBlur, 400);
+          }}
         ></input>
       </div>
       <ul
@@ -48,7 +56,11 @@ export default function Search() {
         }
       >
         {filtered.map((item) => (
-          <li key={item.data.id}>{item.data.url}</li>
+          <li key={item.data.id} onClick={onBlur}>
+            <Link className="link" to={item.data.url.toLowerCase()}>
+              {item.data.url}
+            </Link>
+          </li>
         ))}
       </ul>
     </div>
