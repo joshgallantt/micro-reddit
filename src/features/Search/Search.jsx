@@ -1,14 +1,14 @@
 import React from "react";
-import axios from "axios";
 import { useEffect, useState } from "react";
-// import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchSubreddits, setSearch, setFilter } from "./searchSlice";
 
 export default function Search() {
-  // const filter = useSelector((state) => state.filterSelection.filter);
-  // const dispatch = useDispatch();
-  const [data, setData] = useState([]);
-  const [searchParam, setSearchParam] = useState("");
-  const [filteredList, setFilteredList] = useState([]);
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.subreddits.data);
+  const searchParam = useSelector((state) => state.subreddits.searchParam);
+  const filtered = useSelector((state) => state.subreddits.filtered);
+
   const [focused, setFocused] = useState(false);
 
   const onFocus = () => {
@@ -17,26 +17,17 @@ export default function Search() {
   const onBlur = () => setFocused(false);
 
   useEffect(() => {
-    const fetchSubreddits = async () => {
-      const result = await axios("https://www.reddit.com/subreddits.json");
-      setData(result.data.data.children);
-    };
+    dispatch(fetchSubreddits());
+  }, [dispatch]);
 
-    function filteredResults() {
-      const filteredArray = data.filter((sub) =>
-        sub.data.url.toLowerCase().includes(searchParam)
+  useEffect(() => {
+    if (data !== undefined) {
+      dispatch(
+        setFilter(
+          data.filter((sub) => sub.data.url.toLowerCase().includes(searchParam))
+        )
       );
-      setFilteredList(filteredArray);
     }
-
-    fetchSubreddits();
-    filteredResults();
-    const onFocus = () => {
-      if (searchParam !== "") {
-        setFocused(true);
-      }
-    };
-    const onBlur = () => setFocused(false);
   }, [searchParam]);
 
   return (
@@ -45,7 +36,7 @@ export default function Search() {
         <input
           type="text"
           placeholder="search"
-          onChange={(e) => setSearchParam(e.target.value.toLowerCase())}
+          onChange={(e) => dispatch(setSearch(e.target.value.toLowerCase()))}
           value={searchParam}
           onFocus={onFocus}
           onBlur={onBlur}
@@ -56,7 +47,7 @@ export default function Search() {
           focused === true ? "search--results" : "search--results hidden"
         }
       >
-        {filteredList.map((item) => (
+        {filtered.map((item) => (
           <li key={item.data.id}>{item.data.url}</li>
         ))}
       </ul>
