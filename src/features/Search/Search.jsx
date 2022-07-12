@@ -50,19 +50,17 @@ export default function Search() {
           }}
         ></input>
       </div>
-      <ul
-        className={
-          focused === true ? "search--results" : "search--results hidden"
-        }
-      >
-        {filtered.map((item) => (
-          <li key={item.data.id} onClick={onBlur}>
-            <Link className="link" to={item.data.url.toLowerCase()}>
-              {item.data.url}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <div className={focused === false ? "search--results" : "hidden"}>
+        <ul>
+          {filtered.map((item) => (
+            <li key={item.data.id} onClick={onBlur}>
+              <Link className="link" to={item.data.url.toLowerCase()}>
+                {item.data.url}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
