@@ -4,15 +4,20 @@
   justify-content: space-around;
   max-width: 800px;
   margin: auto;
-  font-size: 18px;
-  max-width: 640px;
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .filters--entry {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 5px;
+  padding: 0 10px;
+  background-color: white;
+  height: 40px;
+  border-radius: 9px;
 }
 
 .filters--entry:hover svg,

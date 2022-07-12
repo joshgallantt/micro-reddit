@@ -11,7 +11,7 @@ export default function Subreddit() {
   return (
     <>
       <Filter />
-      <h2>{currentSub + filter}</h2>
+      <h1>{currentSub + filter}</h1>
       <PostList></PostList>
       {/* <Outlet /> */}
     </>
