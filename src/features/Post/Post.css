@@ -69,10 +69,12 @@
 @media (hover: hover) and (pointer: fine) {
   .post--info--score--up:hover {
     fill: green;
+    cursor: pointer;
   }
 
   .post--info--score--down:hover {
     fill: orange;
+    cursor: pointer;
   }
 }
 
@@ -89,7 +91,9 @@
   width: 100%;
   text-align: center;
 }
-
+.post--info--author:hover {
+  color: black;
+}
 .post--info--author p {
   font-size: 12px;
 }
