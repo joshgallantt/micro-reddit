@@ -1,12 +1,7 @@
 import React from "react";
-import { useEffect, useState } from "react";
-
 import "./App.css";
-import NavBar from "./features/NavBar/NavBar.jsx";
-import Filter from "./features/Filter/Filter";
-import PostList from "./features/PostList/PostList";
 
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SharedLayout from "./pages/SharedLayout";
 import Home from "./pages/Home";
 import Subreddit from "./pages/Subreddit";
