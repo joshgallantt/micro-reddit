@@ -98,7 +98,7 @@ export default function Post(props) {
       <video
         loop={true}
         autoPlay="autoplay"
-        controls="controls"
+        controls={false}
         id="vid"
         muted
         playsInline
