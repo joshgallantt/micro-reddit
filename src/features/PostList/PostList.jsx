@@ -6,7 +6,6 @@ import { useLocation } from "react-router-dom";
 import { changeSub } from "../../appSlice";
 import Post from "../Post/Post";
 import axios from "axios";
-import { Link } from "react-router-dom";
 
 export default function PostList() {
   const dispatch = useDispatch();
@@ -48,9 +47,7 @@ export default function PostList() {
       <ul className="postList">
         {posts.map((post) => (
           <li className="postList--posts" key={post.data.id}>
-            <Link to={`/posts${post.data.permalink}`}>
-              <Post data={post.data}></Post>
-            </Link>
+            <Post data={post.data}></Post>
           </li>
         ))}
       </ul>
