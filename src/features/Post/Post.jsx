@@ -2,9 +2,63 @@ import React from "react";
 import "./Post.css";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export default function Post(props) {
   const currentSub = useSelector((state) => state.currentSub.currentSub);
+  const [vote, setVote] = useState("");
+  const [score, setScore] = useState(props.data.ups);
+
+  const handleClick = (event) => {
+    // 👇️ toggle isActive state on click
+    if (
+      event.currentTarget.classList.value.includes("up") &&
+      !event.currentTarget.classList.value.includes("green")
+    ) {
+      setVote("up");
+      setScore(props.data.ups + 1);
+    }
+    if (
+      event.currentTarget.classList.value.includes("down") &&
+      !event.currentTarget.classList.value.includes("orange")
+    ) {
+      setVote("down");
+      setScore(props.data.ups - 1);
+    }
+    if (
+      event.currentTarget.classList.value.includes("green") ||
+      event.currentTarget.classList.value.includes("orange")
+    ) {
+      setVote("");
+      setScore(props.data.ups);
+    }
+  };
+  function timeSince(date) {
+    var seconds = Math.floor((new Date().getTime() - date * 1000) / 1000);
+
+    var interval = seconds / 31536000;
+
+    if (interval > 1) {
+      return Math.floor(interval) + " years";
+    }
+    interval = seconds / 2592000;
+    if (interval > 1) {
+      return Math.floor(interval) + " months";
+    }
+    interval = seconds / 86400;
+    if (interval > 1) {
+      return Math.floor(interval) + " days";
+    }
+    interval = seconds / 3600;
+    if (interval > 1) {
+      return Math.floor(interval) + " hours";
+    }
+    interval = seconds / 60;
+    if (interval > 1) {
+      return Math.floor(interval) + " minutes";
+    }
+    return Math.floor(seconds) + " seconds";
+  }
   // console.log(props.data);
   function displayVideo(src) {
     return (
@@ -113,21 +167,31 @@ export default function Post(props) {
       <div>
         <div className="post--info">
           <div className="post--info--score">
-            <div className="post--info-score--up">
-              <svg
-                className="icon"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 384 512"
-              >
+            <div
+              className={
+                vote === "up"
+                  ? "post--info--score--up green"
+                  : "post--info--score--up"
+              }
+              onClick={handleClick}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                 <path d="M374.6 246.6C368.4 252.9 360.2 256 352 256s-16.38-3.125-22.62-9.375L224 141.3V448c0 17.69-14.33 31.1-31.1 31.1S160 465.7 160 448V141.3L54.63 246.6c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160C387.1 213.9 387.1 234.1 374.6 246.6z" />
               </svg>
             </div>
             <h3 className="post--info--score--value">
-              {props.data.ups >= 1000
-                ? Math.round((props.data.ups / 1000) * 10) / 10 + "k"
-                : props.data.ups}
+              {score >= 1000
+                ? Math.round((score / 1000) * 10) / 10 + "k"
+                : score}
             </h3>
-            <div className="post--info--score--down">
+            <div
+              className={
+                vote === "down"
+                  ? "post--info--score--down orange"
+                  : "post--info--score--down"
+              }
+              onClick={handleClick}
+            >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                 <path d="M374.6 310.6l-160 160C208.4 476.9 200.2 480 192 480s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 370.8V64c0-17.69 14.33-31.1 31.1-31.1S224 46.31 224 64v306.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0S387.1 298.1 374.6 310.6z" />
               </svg>
@@ -153,7 +217,7 @@ export default function Post(props) {
           <div>
             <div className="post--info--author">
               <p>
-                posted by
+                posted {timeSince(props.data.created)} ago by
                 <br />
                 <span className="post--info-author--prop">
                   u/{props.data.author}

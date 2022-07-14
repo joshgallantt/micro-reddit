@@ -45,6 +45,7 @@ export default function PostList() {
     }
     return (
       <ul className="postList">
+        {console.log(posts)}
         {posts.map((post) => (
           <li className="postList--posts" key={post.data.id}>
             <Post data={post.data}></Post>

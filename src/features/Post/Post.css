@@ -59,9 +59,21 @@
   gap: 10px;
   color: blue;
 }
-
-.post--info--score--up:hover {
+.green svg {
   fill: green;
+}
+
+.orange svg {
+  fill: orange;
+}
+@media (hover: hover) and (pointer: fine) {
+  .post--info--score--up:hover {
+    fill: green;
+  }
+
+  .post--info--score--down:hover {
+    fill: orange;
+  }
 }
 
 .post--info--comment {
