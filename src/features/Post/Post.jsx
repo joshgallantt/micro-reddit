@@ -215,15 +215,20 @@ export default function Post(props) {
             </Link>
           )}
           <div>
-            <div className="post--info--author">
-              <p>
-                posted {timeSince(props.data.created)} ago by
-                <br />
-                <span className="post--info-author--prop">
-                  u/{props.data.author}
-                </span>
-              </p>
-            </div>
+            <Link
+              className="post--info--author"
+              to={`/posts${props.data.permalink}`}
+            >
+              <div className="post--info--author">
+                <p>
+                  posted {timeSince(props.data.created)} ago by
+                  <br />
+                  <span className="post--info-author--prop">
+                    u/{props.data.author}
+                  </span>
+                </p>
+              </div>
+            </Link>
           </div>
         </div>
       </div>
