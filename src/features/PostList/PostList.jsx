@@ -10,7 +10,6 @@ import { Link } from "react-router-dom";
 
 export default function PostList() {
   const dispatch = useDispatch();
-  const currentSub = useSelector((state) => state.currentSub.currentSub);
   const filter = useSelector((state) => state.filterSelection.filter);
   let location = useLocation();
   const [posts, setPosts] = useState([]);

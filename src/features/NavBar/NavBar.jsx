@@ -23,7 +23,10 @@ function NavBar() {
       <Search />
       <div className="header--dots">
         <a href="https://github.com/joshgallantt/micro-reddit">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+            alt="github logo"
+          />
         </a>
       </div>
     </header>

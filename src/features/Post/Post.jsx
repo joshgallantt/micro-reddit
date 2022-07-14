@@ -24,18 +24,18 @@ export default function Post(props) {
     return <img className="preview" src={src} alt="thumb" />;
   }
 
-  function displayIframe(src) {
-    return (
-      <iframe
-        src="https://www.redditmedia.com/mediaembed/vxctmq"
-        frameborder="0"
-        allowfullscreen="true"
-        scrolling="no"
-        height="378"
-        width="620"
-      ></iframe>
-    );
-  }
+  // function displayIframe(src) {
+  //   return (
+  //     <iframe
+  //       src="https://www.redditmedia.com/mediaembed/vxctmq"
+  //       frameborder="0"
+  //       allowfullscreen="true"
+  //       scrolling="no"
+  //       height="378"
+  //       width="620"
+  //     ></iframe>
+  //   );
+  // }
 
   function displayGif(src) {
     return (
