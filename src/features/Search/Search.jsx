@@ -34,7 +34,7 @@ export default function Search() {
         )
       );
     }
-  }, [data, searchParam]);
+  }, [data, searchParam, dispatch]);
 
   return (
     <div className="search">
