@@ -1,19 +1,19 @@
 import React from "react";
 import { data } from "./data";
 import "./Post.css";
+import { useSelector } from "react-redux";
 
 export default function Post(props) {
-  console.log(props.data);
-
+  const currentSub = useSelector((state) => state.currentSub.currentSub);
+  // console.log(props.data);
   function displayVideo(src) {
-    console.log(props.data.title);
     return (
       <video
-        loop="true"
-        autoplay="autoplay"
+        loop={true}
+        autoPlay="autoplay"
         controls="controls"
         id="vid"
-        muted
+        // muted
         className="preview"
       >
         <source src={src} type="video/mp4" />
@@ -42,7 +42,7 @@ export default function Post(props) {
     return (
       <video
         loop={true}
-        autoplay="autoplay"
+        autoPlay="autoplay"
         controls="controls"
         id="vid"
         muted
@@ -56,13 +56,13 @@ export default function Post(props) {
   function displayText(src) {
     const textPreview = src.slice(0, 600);
     return (
-      <p>
+      <div className="post--content--text">
         {textPreview} +{" "}
         <div className="post--content--readmore">
           <br />
           ...Read More
         </div>
-      </p>
+      </div>
     );
   }
 
@@ -81,25 +81,21 @@ export default function Post(props) {
     if (props.data.is_video) {
       try {
         return displayVideo(props.data.secure_media.reddit_video.fallback_url);
-      } catch (error) {
-        console.log(props);
-      }
+      } catch (error) {}
     }
     if (props.data.domain === "clips.twitch.tv") {
       try {
         return displayImage(props.data.media.oembed.thumbnail_url);
-      } catch (error) {
-        console.log(props);
-      }
+      } catch (error) {}
     }
-
-    // return <img src={props.data.thumbnail} alt="im"></img>;
   };
 
   return (
     <div className="post">
       <div className="post--sub">
-        <h5>{props.data.subreddit_name_prefixed}</h5>
+        {currentSub === "/r/all/" ? (
+          <h5>{props.data.subreddit_name_prefixed}</h5>
+        ) : null}
       </div>
       <div className="post--title">
         <h2>{props.data.title}</h2>
@@ -109,7 +105,11 @@ export default function Post(props) {
         <div className="post--info">
           <div className="post--info--score">
             <div className="post--info-score--up">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+              <svg
+                className="icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 384 512"
+              >
                 <path d="M374.6 246.6C368.4 252.9 360.2 256 352 256s-16.38-3.125-22.62-9.375L224 141.3V448c0 17.69-14.33 31.1-31.1 31.1S160 465.7 160 448V141.3L54.63 246.6c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160C387.1 213.9 387.1 234.1 374.6 246.6z" />
               </svg>
             </div>

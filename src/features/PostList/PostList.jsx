@@ -6,6 +6,7 @@ import { useLocation } from "react-router-dom";
 import { changeSub } from "../../appSlice";
 import Post from "../Post/Post";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function PostList() {
   const dispatch = useDispatch();
@@ -20,6 +21,8 @@ export default function PostList() {
 
     if (location.pathname !== "/") {
       dispatch(changeSub(location.pathname));
+    } else {
+      dispatch(changeSub("/r/all/"));
     }
 
     const fetchData = async () => {
@@ -35,7 +38,6 @@ export default function PostList() {
   }, [location, filter]);
 
   function loadingCheck() {
-    console.log(loading);
     if (loading) {
       return (
         <ul className="postList">
@@ -47,7 +49,9 @@ export default function PostList() {
       <ul className="postList">
         {posts.map((post) => (
           <li className="postList--posts" key={post.data.id}>
-            <Post data={post.data}></Post>
+            <Link to={`/posts${post.data.permalink}`}>
+              <Post data={post.data}></Post>
+            </Link>
           </li>
         ))}
       </ul>
