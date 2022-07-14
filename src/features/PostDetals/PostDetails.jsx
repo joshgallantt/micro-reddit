@@ -69,7 +69,7 @@ export default function PostDetails() {
           Comments ({data[1].data.children.length})
         </h3>
         <ul className="comments">
-          {data[1].data.children.map((comment) => (
+          {data[1].data.children.slice(0, -1).map((comment) => (
             <li className="comment" key={comment.data.id}>
               <div className="comment--title">
                 <div>{comment.data.author}</div>
