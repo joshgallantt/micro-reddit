@@ -67,7 +67,8 @@ export default function Post(props) {
         autoPlay="autoplay"
         controls="controls"
         id="vid"
-        // muted
+        muted
+        playsInline
         className="preview"
       >
         <source src={src} type="video/mp4" />
@@ -100,6 +101,7 @@ export default function Post(props) {
         controls="controls"
         id="vid"
         muted
+        playsInline
         className="preview"
       >
         <source src={src} type="video/mp4" />
