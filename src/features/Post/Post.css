@@ -1,7 +1,7 @@
 .post {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 95vw;
   max-width: 800px;
   background-color: white;
   margin-top: 20px;
@@ -13,15 +13,22 @@
   padding: 0 20px;
 }
 
+.post--content {
+  display: flex;
+  justify-content: center;
+}
+
 .post--content * {
-  max-width: 100%;
+  max-width: 85%;
   max-height: 600px;
 }
 
-.post--content p {
+.post--content--text {
+  border: 1px solid gainsboro;
   padding: 20px;
   word-wrap: break-word;
   text-align: left;
+  width: 85%;
 }
 
 .post--content--readmore {
@@ -41,7 +48,7 @@
 }
 
 .post--info svg {
-  min-width: 25px;
+  width: 25px;
 }
 
 .post--info--score {

@@ -46,11 +46,11 @@ export default function Search() {
           value={searchParam}
           onClick={onFocus}
           onBlur={() => {
-            setTimeout(onBlur, 400);
+            setTimeout(onBlur, 100);
           }}
         ></input>
       </div>
-      <div className={focused === false ? "search--results" : "hidden"}>
+      <div className={focused === true ? "search--results" : "hidden"}>
         <ul>
           {filtered.map((item) => (
             <li key={item.data.id} onClick={onBlur}>

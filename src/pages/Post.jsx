@@ -1,5 +1,6 @@
 import React from "react";
+import PostDetails from "../features/PostDetals/PostDetails";
 
 export default function Post() {
-  return <div>Post</div>;
+  return <PostDetails></PostDetails>;
 }

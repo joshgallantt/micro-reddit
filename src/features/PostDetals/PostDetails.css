@@ -1,0 +1,44 @@
+.detailed-post {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment--heading {
+  margin-top: 40px;
+}
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  min-height: 50px;
+  margin-top: 20px;
+  padding: 5px;
+  border: 1px solid gainsboro;
+}
+
+.comment--title {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin-top: 30px;
+}
+
+.comment--body {
+  align-self: flex-start;
+  display: flex;
+  margin-top: 20px;
+  color: #444;
+  text-align: left;
+  justify-content: left;
+  padding: 20px;
+}
