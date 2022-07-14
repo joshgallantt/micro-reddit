@@ -10,7 +10,9 @@
 }
 
 .post--title {
-  padding: 0 20px;
+  padding: 20px 20px;
+  font-weight: bold;
+  font-size: x-large;
 }
 
 .post--content {
@@ -20,11 +22,9 @@
 
 .post--content * {
   max-width: 85%;
-  max-height: 600px;
 }
 
 .post--content--text {
-  border: 1px solid gainsboro;
   padding: 20px;
   word-wrap: break-word;
   text-align: left;

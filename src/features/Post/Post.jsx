@@ -155,13 +155,13 @@ export default function Post(props) {
     <div className="post">
       <div className="post--sub">
         {currentSub === "/r/all/" ? (
-          <h5>{props.data.subreddit_name_prefixed}</h5>
+          <Link to={`${props.data.subreddit_name_prefixed}/`}>
+            <h5>{props.data.subreddit_name_prefixed}</h5>
+          </Link>
         ) : null}
       </div>
       <Link to={`/posts${props.data.permalink}`}>
-        <div className="post--title">
-          <h2>{props.data.title}</h2>
-        </div>
+        <div className="post--title">{props.data.title}</div>
       </Link>
       <div className="post--content">{preview()}</div>
       <div>
