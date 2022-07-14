@@ -29,6 +29,7 @@
   word-wrap: break-word;
   text-align: left;
   width: 85%;
+  line-height: 1.4;
 }
 
 .post--content--readmore {
@@ -65,6 +66,7 @@
 
 .post--info--comment {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   color: blue;
