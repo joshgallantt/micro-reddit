@@ -64,7 +64,7 @@ export default function PostDetails() {
     return (
       <div className="detailed-post">
         {console.log(data)}
-        <Post data={data[0].data.children[0].data} />
+        <Post data={data[0].data.children[0].data} details={true} />
         <h3 className="comment--heading">
           Comments ({data[1].data.children.length})
         </h3>

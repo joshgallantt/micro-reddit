@@ -16,6 +16,11 @@
   align-items: center;
   gap: 10px;
 }
+
+.header--site {
+  color: black;
+}
+
 .header--logo {
   width: 30px;
 }
