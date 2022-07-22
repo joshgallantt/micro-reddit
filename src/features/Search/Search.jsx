@@ -46,7 +46,7 @@ export default function Search() {
           value={searchParam}
           onClick={onFocus}
           onBlur={() => {
-            setTimeout(onBlur, 100);
+            setTimeout(onBlur, 200);
           }}
         ></input>
       </div>
